@@ -1,0 +1,13 @@
+version: '3.5'
+
+services:
+  rpi-api:
+    container_name: "rpi-api"
+    privileged: true
+    restart: unless-stopped
+    image: rpi-api:latest
+    build:
+      dockerfile: ./Dockerfile
+      context: ./
+    ports:
+      - 5000:5000
